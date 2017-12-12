@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyloader 的使用</title>
+    <!--引入js-->
+    <script src="../jquery-1.7.2.min.js"></script>
+    <!--引入easyloader-->
+    <script src="../easyloader.js"></script>
+
+    <script type="text/javascript">
+
+
+
+
+        $(function () {
+            //使用easyloader加载dialog模块所需要的相关js和css样式
+            // easyloader.load('dialog',function(){
+            //     /*
+            //     * 1.定义一个div ,并给div指定一个id
+            //     * 2.使用jq获得div, 并使用dialog()方法
+            //     * */
+            //     $('#dd2').dialog({
+            //         title:'使用loader  创建一dialog',
+            //         width:400,
+            //         height:300,
+            //         modal:true,
+            //         closed:false,
+            //         cache:false
+            //     });
+            // });
+            // easyloader.locale = 'zh_CN';
+
+
+            // });
+
+            // easyloader 还有一个别名在Windows对象上  using
+            using('messager',function () {
+                $('#alertMessage').click(function () {
+                    alert('我进来了');
+                    $.messager.alert('警告','警告消息');
+                });
+            });
+
+        });
+        
+        
+    </script>
+</head>
+<body>
+    <div id="dd2"></div>
+    <input type="button" id="alertMessage" value="Message" >
+</body>
+</html>

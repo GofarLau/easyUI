@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout 学习</title>
+    <script src="../jquery-1.7.2.min.js"></script>
+    <script src="../jquery.easyui.min.js"></script>
+    <script src="../locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="../themes/default/easyui.css">
+    <link rel="stylesheet" href="../themes/icon.css">
+
+    <script type="text/javascript">
+        $(function () {
+
+            $('#p').panel({
+                width:500,
+                height:150,
+                title:'my panel',
+                tools:[
+                    {
+                        iconCls:'icon-add',
+                        handler:function () {
+                            alert("add");
+                        }
+                    },{
+                        iconCls:'icon-save',
+                        handler:function () {
+                            alert('save');
+                        }
+                    }
+                ]
+            });
+
+
+            
+        });
+
+        function moveP() {
+
+
+                alert('让他移动')
+            $('#p').panel('move',{
+                left:100,
+                top:100
+            });
+
+
+
+        }
+    </script>
+</head>
+<body>
+    <div id="p">
+        <p>panel context</p>
+        <p>panel context</p>
+
+    </div>
+    <input type="button" id="movebtn" value="move" onclick="moveP()">
+</body>
+</html>

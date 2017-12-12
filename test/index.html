@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>easyUI学习</title>
+    <script src="../jquery-1.7.2.min.js"></script>
+    <script src="../jquery.easyui.min.js"></script>
+    <script src="../locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="../themes/default/easyui.css">
+    <link rel="stylesheet" href="../themes/icon.css">
+
+    <!--测试脚本-->
+    <script type="text/javascript">
+        // 使用easyUI javascript 方式创建dialog步骤:
+        // 1.定义一个div, 并给div指定一个id
+        // 2.使用jq选择器选中该div,然后调用dialog()方法就可以创建easyUI的dialog
+        // 使用js创建windows 窗口
+
+
+
+       function openWindows(){
+           $('#win').window({
+               title:'我的windows',
+               width: 400,
+               height: 300,
+               modal: true
+
+           });
+           $('#win').window('open');
+       }
+
+
+        $(function(){
+            // 使用js创建dialog窗口
+           $('#dd3').dialog({
+               title: '使用js查创建的dialog',
+               width: 400,
+               height: 300,
+               closed: false,
+               cache: false,
+               model: true,
+               collapsible: true,
+               minimizable: true,
+               toolbar:[
+                   {
+                       text: '编辑',
+                       iconCls: 'icon-edit',
+                       handler: function(){alert("edit")}
+                   },{
+                        text: '帮助',
+                       iconCls: 'icon-help',
+                       handler: function(){alert("help")}
+                   }
+               ],
+               buttons: [
+                   {
+                       text:'保存',
+                       handler: function () {alert("保存按钮 ")}
+                   },{
+                        text:'关闭',
+                       handler: function () {
+                           alert("关闭");
+                       }
+                   }
+               ]
+           });
+
+
+        });
+    </script>
+
+</head>
+<body>
+    <!--<div id="dd3">context </div>-->
+    <div id="win"></div>
+    <input type="button" value='打开一个窗口' onclick="openWindows()">
+</body>
+</html>
